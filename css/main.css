@@ -296,14 +296,14 @@ body .reveal {
 }
 
 body {
-    background: #1C2835;
-    background: -moz-radial-gradient(center, circle cover, #4F6E8B 0%, #1C2835 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #4F6E8B), color-stop(100%, #1c1e20));
-    background: -webkit-radial-gradient(center, circle cover, #4F6E8B 0%, #1C2835 100%);
-    background: -o-radial-gradient(center, circle cover, #4F6E8B 0%, #1C2835 100%);
-    background: -ms-radial-gradient(center, circle cover, #4F6E8B 0%, #1C2835 100%);
-    background: radial-gradient(center, circle cover, #4F6E8B 0%, #1C2835 100%);
-    background-color: #1C2835; 
+    background: #DDDDDD;
+    background: -moz-radial-gradient(center, circle cover, #dddddd 0%, #ffffff 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #DDDDDD), color-stop(100%, #ffffff));
+    background: -webkit-radial-gradient(center, circle cover, #DDDDDD 0%, #ffffff 100%);
+    background: -o-radial-gradient(center, circle cover, #DDDDDD 0%, #ffffff 100%);
+    background: -ms-radial-gradient(center, circle cover, #DDDDDD 0%, #ffffff 100%);
+    background: radial-gradient(center, circle cover, #DDDDDD 0%, #ffffff 100%);
+    background-color: #DDDDDD; 
 }
 
 .reveal .dcug-logo {
@@ -318,8 +318,14 @@ body {
 
 .reveal h1,
 .reveal h2,
-.reveal h3 {
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6,
+.reveal p,
+.reveal li {
     font-family: 'Raleway-Bold', Helvetica, sans serif;
+    color: #666;
 }
 
 .done > li,
