@@ -1,6 +1,6 @@
 Reveal.initialize();
 
-var shipsterYearLabels = ["2017", "2018", "2019", "2020", "2021"];
+var YearLabels = ["2017", "2018", "2019", "2020", "2021"];
 
 var chartConf = {
     type: {
@@ -95,7 +95,7 @@ var OSNSegmentArrays = {
 var finConf1 = {
     type: chartConf.type.line,
     data: {
-        labels: shipsterYearLabels,
+        labels: YearLabels,
         datasets: [{
             label: '0,25%',
             data: calcRev(OSNSegmentArrays.yearsCCMobEur, OSN.revPercs[0]),
@@ -188,7 +188,7 @@ var finConf1 = {
     }
 }
 
-var ctx1 = document.getElementById("ShipsterFinance1");
+var ctx1 = document.getElementById("Finance1");
 
-var ShipsterFinance_1 = new Chart(ctx1, finConf1);
+var Finance_1 = new Chart(ctx1, finConf1);
 
