@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+		<!-- V custom styles hierin V -->
+		<link rel="stylesheet" href="css/main.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<!-- check de readme file om alle soorten slides te zien. hier staan code snippits in van revealjs !!!! -->
+	<!-- ************************************************************************************************** -->
+	<body>
+		<div id="particles-js" class="reveal">
+			<div class="slides">
+				<!-- binnen dit gedeelte kan je je slides maken -->
+				<!-- ******************\\//******************* -->
+
+				<section>
+					<div class="dcug-logo"></div>
+					<h2>DCUG @ bol.com</h2>
+				</section>
+				<section>
+					<section>
+						<ul>
+							<li>item 1</li>
+							<li>item 2</li>
+							<li>item 3</li>
+							<li>item 4</li>
+							<li>item 5</li>
+							<li>item 6</li>
+							<li>item 7</li>
+						</ul>
+					</section>
+					<section>
+							
+					</section>
+				</section>
+
+				<!-- kopieer dit (en decomment) voor een section met achtergrond en lijstje. meer in de readme -->
+				<!-- de class fragment kan je op de onderdelen zetten die per klik will laten zien.-->
+				<!-- data-background kan je vorzien van een url naar een afbeeling die dan fullscreen verschijnt op de slide.-->
+
+				<!-- <section data-background="resources/img/[imagenaam.extentie]">
+						<ul>
+							<li class="fragment">item 1</li>
+							<li class="fragment">item 2</li>
+							<li class="fragment">item 3</li>
+							<li class="fragment">item 4</li>
+							<li class="fragment">item 5</li>
+							<li class="fragment">item 6</li>
+							<li class="fragment">item 7</li>
+						</ul>
+					 <section -->
+
+				
+				
+
+				<!-- ******************//\\******************* -->
+				<!-- binnen dit gedeelte kan je je slides maken -->
+			</div>
+		</div>
+
+
+		<!-- alles hieronder laten staan voor reveal en particles -->
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="lib/js/particles/particles.js"></script>
+		<script src="js/app.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+			// add particles
+			var particleParams = {
+				"particles": {
+				"number": {
+					"value": 70,
+					"density": {
+					"enable": true,
+					"value_area": 800
+					}
+				},
+				"color": {
+					"value": "#22bdf5"
+				},
+				"shape": {
+					"type": "circle",
+					"stroke": {
+					"width": 0,
+					"color": "#22bdf5"
+					},
+					"polygon": {
+					"nb_sides": 5
+					},
+					"image": {
+					"src": "img/github.svg",
+					"width": 100,
+					"height": 100
+					}
+				},
+				"opacity": {
+					"value": 0.5,
+					"random": false,
+					"anim": {
+					"enable": false,
+					"speed": 1,
+					"opacity_min": 0.1,
+					"sync": false
+					}
+				},
+				"size": {
+					"value": 5,
+					"random": true,
+					"anim": {
+					"enable": false,
+					"speed": 80,
+					"size_min": 0.1,
+					"sync": false
+					}
+				},
+				"line_linked": {
+					"enable": true,
+					"distance": 150,
+					"color": "#ffffff",
+					"opacity": 0.4,
+					"width": .5
+				},
+				"move": {
+					"enable": true,
+					"speed": .5,
+					"direction": "none",
+					"random": false,
+					"straight": false,
+					"out_mode": "out",
+					"bounce": false,
+					"attract": {
+					"enable": false,
+					"rotateX": 600,
+					"rotateY": 1200
+					}
+				}
+				},
+				"interactivity": {
+				"detect_on": "canvas",
+				"events": {
+					"onhover": {
+					"enable": false,
+					"mode": "repulse"
+					},
+					"onclick": {
+					"enable": true,
+					"mode": "push"
+					},
+					"resize": true
+				},
+				"modes": {
+					"grab": {
+					"distance": 800,
+					"line_linked": {
+						"opacity": 1
+					}
+					},
+					"bubble": {
+					"distance": 800,
+					"size": 80,
+					"duration": 2,
+					"opacity": 0.8,
+					"speed": 3
+					},
+					"repulse": {
+					"distance": 400,
+					"duration": 0.4
+					},
+					"push": {
+					"particles_nb": 4
+					},
+					"remove": {
+					"particles_nb": 2
+					}
+				}
+				},
+				"retina_detect": true
+			};
+			
+			window.particlesJS('particles-js', particleParams);
+		</script>
+	</body>
+</html>

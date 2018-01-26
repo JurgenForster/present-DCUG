@@ -1,0 +1,208 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/reveal/index.css">
+	<link rel="stylesheet" href="css/reveal/default.css">
+	<link href="https://fonts.googleapis.com/css?family=Unica+One|Julius+Sans+One|Pacifico|Permanent+Marker|Leckerli+One|Libre+Barcode+39+Extended+Text" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome/font-awesome.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/devices/devices.css" type="text/css">
+	<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+	<script src="js/vendor/reveal/index.js"></script>
+
+</head>
+
+<body>
+	<!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+	<!-- Add your site or application content here -->
+	<div id="particles-js" class="reveal">
+		<div class="slides fs">
+		
+			<section class="no-bg">
+				<div class="dcug-logo"></div>
+				<h2>DCUG @ bol.com</h2>
+			</section>
+
+			<!-- ************* -->
+			<!-- Phone slides -->
+			<section>
+				<!-- DCUG slide phone -->
+				<section class="no-bg align-left">
+					<!-- text -->
+					<div class="phone-text">
+						<h2>DCUG</h2>
+						<h3 class="text-shade mint">sub</h3>
+						<hr>
+						<ul>
+							<li>item</li>
+						</ul>
+					</div>
+
+					<!-- phone -->
+					<div class="phone">
+						<div class="marvel-device note8">
+							<div class="inner"></div>
+							<div class="overflow">
+								<div class="shadow"></div>
+							</div>
+							<div class="speaker"></div>
+							<div class="sensors"></div>
+							<div class="more-sensors"></div>
+							<div class="sleep"></div>
+							<div class="volume"></div>
+							<div class="camera"></div>
+							<div class="screen">
+								<!-- add some in screen -->
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<!-- ************* -->
+
+			<section>
+				<section class="shipster-chart-slide">
+					<div class="shipster-chart-container">
+						<canvas id="ShipsterFinance1"></canvas>
+					</div>
+				</section>
+			</section>
+
+		</div>
+	</div>
+	<script src="lib/js/Chart.bundle.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="lib/js/particles/particles.js"></script>
+	<script>
+		// add particles
+		var particleParams = {
+			"particles": {
+			"number": {
+				"value": 70,
+				"density": {
+				"enable": true,
+				"value_area": 800
+				}
+			},
+			"color": {
+				"value": "#22bdf5"
+			},
+			"shape": {
+				"type": "circle",
+				"stroke": {
+				"width": 0,
+				"color": "#22bdf5"
+				},
+				"polygon": {
+				"nb_sides": 5
+				},
+				"image": {
+				"src": "img/github.svg",
+				"width": 100,
+				"height": 100
+				}
+			},
+			"opacity": {
+				"value": 0.5,
+				"random": false,
+				"anim": {
+				"enable": false,
+				"speed": 1,
+				"opacity_min": 0.1,
+				"sync": false
+				}
+			},
+			"size": {
+				"value": 5,
+				"random": true,
+				"anim": {
+				"enable": false,
+				"speed": 80,
+				"size_min": 0.1,
+				"sync": false
+				}
+			},
+			"line_linked": {
+				"enable": true,
+				"distance": 150,
+				"color": "#ffffff",
+				"opacity": 0.4,
+				"width": .5
+			},
+			"move": {
+				"enable": true,
+				"speed": .5,
+				"direction": "none",
+				"random": false,
+				"straight": false,
+				"out_mode": "out",
+				"bounce": false,
+				"attract": {
+				"enable": false,
+				"rotateX": 600,
+				"rotateY": 1200
+				}
+			}
+			},
+			"interactivity": {
+			"detect_on": "canvas",
+			"events": {
+				"onhover": {
+				"enable": false,
+				"mode": "repulse"
+				},
+				"onclick": {
+				"enable": true,
+				"mode": "push"
+				},
+				"resize": true
+			},
+			"modes": {
+				"grab": {
+				"distance": 800,
+				"line_linked": {
+					"opacity": 1
+				}
+				},
+				"bubble": {
+				"distance": 800,
+				"size": 80,
+				"duration": 2,
+				"opacity": 0.8,
+				"speed": 3
+				},
+				"repulse": {
+				"distance": 400,
+				"duration": 0.4
+				},
+				"push": {
+				"particles_nb": 4
+				},
+				"remove": {
+				"particles_nb": 2
+				}
+			}
+			},
+			"retina_detect": true
+		};
+
+		window.particlesJS('particles-js', particleParams);
+	</script>
+</body>
+
+</html>
