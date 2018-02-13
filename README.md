@@ -7,7 +7,10 @@ DCUG presentation in reveal with particles and chart.js
 - [charts.js](http://www.chartjs.org/)
 - [devices.css](https://picturepan2.github.io/devices.css/)
 
-### Install
+### required:
+- node.js (configured)
+
+### commandline:
 ```
 cd [Path to le desired location]
 
