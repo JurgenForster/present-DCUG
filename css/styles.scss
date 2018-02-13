@@ -1,0 +1,10 @@
+.reveal {
+    .slides {
+        a {
+            color:rgba(0, 180, 140);
+            &:link, &:visited, &:hover {
+                color:rgba(0, 180, 140);
+            }
+        }
+    }
+}

@@ -292,7 +292,7 @@ textarea {
 }
 
 body .reveal {
-    font-family: 'Raleway-Light', Helvetica, sans serif;
+    font-family: 'Raleway-Light', Helvetica, sans-serif;
 }
 
 body {
@@ -324,7 +324,7 @@ body {
 .reveal h6,
 .reveal p,
 .reveal li {
-    font-family: 'Raleway-Bold', Helvetica, sans serif;
+    font-family: 'Raleway-Bold', Helvetica, sans-serif;
     color: #666;
 }
 
@@ -541,6 +541,14 @@ ul.images {
     vertical-align: bottom;
 }
 
+.reveal .slides a:link {
+    color: rgba(0, 180, 140, 1);
+}
+
+.reveal .slides a:not(.image) {
+    color: rgba(0, 180, 140, 1);
+}
+
 .reveal .slides section.present .warm-orange {
     color: rgba(255, 104, 63, 1) !important;
 }
@@ -599,7 +607,7 @@ ul.images {
 }
 
 .reveal .mint {
-    color: #0FC46F;
+    color: rgba(0, 180, 140, 1);
 }
 
 .reveal .light-blue {
@@ -607,7 +615,7 @@ ul.images {
 }
 
 .reveal .icons-train li .mint {
-    color: #0FC46F;
+    color: rgba(0, 180, 140, 1);
     font-size: 0.9em;
 }
 
@@ -657,6 +665,7 @@ ul.images {
 
 /* device */
 .phone .note8 .screen {
-    background-color: #e9ebee;
+    background-color: #999999;
     position: relative;
 }
+
