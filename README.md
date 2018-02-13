@@ -9,6 +9,12 @@ DCUG presentation in reveal with particles and chart.js
 
 ### Install
 ```
+cd [Path to le desired location]
+
+mkdir [Desired folder name] && cd [Desired folder name]
+
+git clone https://github.com/JurgenForster/present-DCUG.git
+
 npm install
 
 npm update
