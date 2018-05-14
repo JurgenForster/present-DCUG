@@ -9,7 +9,7 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
- 
+
 @font-face {
     font-family: 'Raleway-Light';
     src: url('./font/Raleway-Light.ttf'); /* IE9 Compat Modes */
@@ -105,22 +105,6 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -187,7 +171,7 @@ textarea {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
+    content: ' '; /* 1 */
     display: table; /* 2 */
 }
 
@@ -206,9 +190,9 @@ textarea {
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+    (-webkit-min-device-pixel-ratio: 1.25),
+    (min-resolution: 1.25dppx),
+    (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -237,11 +221,11 @@ textarea {
     }
 
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: ' (' attr(href) ')';
     }
 
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: ' (' attr(title) ')';
     }
 
     /*
@@ -249,9 +233,9 @@ textarea {
      * or use the `javascript:` pseudo protocol
      */
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
+    a[href^='#']:after,
+    a[href^='javascript:']:after {
+        content: '';
     }
 
     pre,
@@ -296,21 +280,21 @@ body .reveal {
 }
 
 body {
-    background: #DDDDDD;
-    background: -moz-radial-gradient(center, circle cover, #dddddd 0%, #ffffff 100%);
+    background: #00a1de;
+    /* background: -moz-radial-gradient(center, circle cover, #dddddd 0%, #ffffff 100%);
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #DDDDDD), color-stop(100%, #ffffff));
     background: -webkit-radial-gradient(center, circle cover, #DDDDDD 0%, #ffffff 100%);
     background: -o-radial-gradient(center, circle cover, #DDDDDD 0%, #ffffff 100%);
     background: -ms-radial-gradient(center, circle cover, #DDDDDD 0%, #ffffff 100%);
     background: radial-gradient(center, circle cover, #DDDDDD 0%, #ffffff 100%);
-    background-color: #DDDDDD; 
+    background-color: #DDDDDD#00a1de;  */
 }
 
 .reveal .dcug-logo {
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    box-shadow: 3px 12px 6px 0 rgba(0,0,0,0.2);
+    box-shadow: 3px 12px 6px 0 rgba(0, 0, 0, 0.2);
     margin: 20px auto;
     background: url('../resources/img/chatbot_evolution.svg') 0 0 no-repeat;
     overflow: hidden;
@@ -325,7 +309,7 @@ body {
 .reveal p,
 .reveal li {
     font-family: 'Raleway-Bold', Helvetica, sans-serif;
-    color: #666;
+    color: #fff;
 }
 
 .done > li,
@@ -334,10 +318,10 @@ body {
     line-height: 60px;
 }
 
-.done > li::before ,
+.done > li::before,
 .not-done > li::before {
     font-size: 1em;
-    transition: color .2s ease, font-size .5s ease;
+    transition: color 0.2s ease, font-size 0.5s ease;
     font-family: 'FontAwesome';
     content: '';
     margin-right: 15px;
@@ -346,7 +330,7 @@ body {
 
 .done > li::before {
     content: '\f00c';
-    color: #00AA44;
+    color: #00aa44;
 }
 
 .done > li:hover::before,
@@ -361,40 +345,39 @@ body {
     text-shadow: 0 2px #009944;
 }
 
-
 .not-done > li::before {
     content: '\f00d';
-    color: #BB0000;
+    color: #bb0000;
 }
 
 .not-done > li:hover::before {
     font-size: 1.2em;
-    color: #FF0000;
-    text-shadow: 0 2px #AA0000;
+    color: #ff0000;
+    text-shadow: 0 2px #aa0000;
 }
 
-.reveal h1{
+.reveal h1 {
     text-shadow: none;
 }
 
 /* chatbot styles */
 .chat-window {
-	height: 600px;
-	background: #f3f3f3;
-	width: 100%;
+    height: 600px;
+    background: #f3f3f3;
+    width: 100%;
 }
 
 /* chat style items */
 ul.chat {
     width: 90%;
 }
-.chat li{
+.chat li {
     display: block;
     float: left;
     width: 100%;
 }
 .chat .bot {
-    float:right;
+    float: right;
 }
 
 .chat .text-balloon {
@@ -406,13 +389,13 @@ ul.chat {
     width: auto;
     padding: 15px 30px;
     border-radius: 10px;
-    box-shadow: 3px 3px 3px 0 rgba(0,0,0,.8);
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.8);
     position: relative;
     margin-bottom: 14px;
 }
 
 .chat .text-balloon::before {
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     border-width: 20px 30px 20px 5px;
@@ -437,7 +420,7 @@ ul.chat {
 }
 
 .chat .bot + .bot .text-balloon {
-     margin-top: -14px;
+    margin-top: -14px;
 }
 
 .chat li:not(.bot) + li:not(.bot) .text-balloon {
@@ -448,7 +431,7 @@ ul.chat {
 ul.legenda {
     width: 90%;
 }
-.legenda li{
+.legenda li {
     display: block;
     float: left;
     width: 100%;
@@ -463,13 +446,13 @@ ul.legenda {
     width: auto;
     padding: 15px 30px;
     border-radius: 10px;
-    box-shadow: 3px 3px 3px 0 rgba(0,0,0,.8);
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.8);
     position: relative;
     margin-bottom: 14px;
 }
 
 .legenda .text-balloon::before {
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     border-width: 20px 30px 20px 5px;
@@ -490,8 +473,8 @@ ul.legenda {
 }
 
 /* no darkened bg */
-.reveal .slides > section.present.no-bg, 
-.reveal .slides > section.present .no-bg{
+.reveal .slides > section.present.no-bg,
+.reveal .slides > section.present .no-bg {
     background: none;
 }
 
@@ -511,7 +494,7 @@ ul.images {
 }
 
 .images .image {
-    width:auto;
+    width: auto;
 }
 
 .images .fragment:nth-child(even),
@@ -542,11 +525,11 @@ ul.images {
 }
 
 .reveal .slides a:link {
-    color: rgba(0, 180, 140, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 .reveal .slides a:not(.image) {
-    color: rgba(0, 180, 140, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 .reveal .slides section.present .warm-orange {
@@ -554,7 +537,7 @@ ul.images {
 }
 
 .reveal .slides .text-shade {
-    text-shadow: 0 5px 10px rgba(20,20,20,0.5);
+    text-shadow: 0 5px 10px rgba(20, 20, 20, 0.5);
 }
 
 .reveal .slides section.present.fs {
@@ -589,7 +572,7 @@ ul.images {
     position: relative;
     text-align: center;
     color: #666;
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
     margin: 0 0.5%;
     padding: 15px 0 25px;
     border-radius: 5px;
@@ -597,7 +580,7 @@ ul.images {
 
 .reveal .icons-train li i {
     float: left;
-    color: rgba(0,0,0,0.9);
+    color: rgba(0, 0, 0, 0.9);
     margin-left: 10px;
     line-height: 1.1em;
 }
@@ -623,13 +606,13 @@ ul.images {
 .reveal .icons-train li:last-child {
     color: #333;
     font-weight: bold;
-    background-color: rgba(255,255,255,1);
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .reveal .icons-train li::after {
     display: block;
     position: absolute;
-    content: "";
+    content: '';
     left: calc(50% - 10px);
     bottom: -20px;
     width: 0;
@@ -668,4 +651,3 @@ ul.images {
     background-color: #999999;
     position: relative;
 }
-

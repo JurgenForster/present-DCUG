@@ -1,6 +1,6 @@
 Reveal.initialize();
 
-var YearLabels = ["2017", "2018", "2019", "2020", "2021"];
+var YearLabels = ['2017', '2018', '2019', '2020', '2021'];
 
 var chartConf = {
     type: {
@@ -10,7 +10,7 @@ var chartConf = {
         radar: 'radar',
         pie: 'pie',
         doughnut: 'doughnut',
-        bubble: 'bubble',
+        bubble: 'bubble'
     },
     colors: {
         green: '0, 180, 140',
@@ -19,6 +19,7 @@ var chartConf = {
         pink: '194, 92, 155',
         yellow: '216, 151, 23',
         orange: '229, 126, 58',
+        red: '194, 23, 23'
     },
     opacity: {
         light: '0.2',
@@ -26,169 +27,229 @@ var chartConf = {
         none: '1',
         transparent: '0'
     }
-}
-
-function calcTotal(startNumber, growth) {
-    var growthArray = [];
-    var x = startNumber;
-
-    growth.forEach(function(growthNumber) {
-        x = x * growthNumber;
-        growthArray.push(x);
-    });
-
-    return growthArray;
-}
-
-function calcSegment(totalArray, growthMobile, growthCC) {
-    var growthSegment = [];
-
-    totalArray.forEach(function(total, index) {
-        if (growthMobile) {
-            total = total * growthMobile[index];
-        }
-        if (growthCC) {
-            total = total * growthCC[index];
-        }
-
-        growthSegment.push(total);
-    });
-
-    return growthSegment;
-}
-
-function calcRev(OSNEurArray, perc) {
-    var revArray = [];
-    OSNEurArray.forEach(function(amount) {
-        var x = amount * perc;
-        revArray.push(x);
-    });
-    return revArray;
-}
-
-var OSN = {
-    eur: 22600,
-    pur: 200,
-    mobile: 0.07,
-    cc: 0.12,
-    growthTotal: [1, 1.13, 1.12, 1.11, 1.1],
-    growthMobile:  [0.07, 0.10, 0.13, 0.17, 0.21],
-    growthCC: [0.12, 0.13, 0.14, 0.15, 0.16],
-    revPercs: [0.0025, 0.005, 0.0075],
-    marketPerc: [0.125, 0.25]
 };
 
-var OSNArrays = {
-    yearsTotalEur: calcTotal(OSN.eur, OSN.growthTotal),
-    yearsTotalPur: calcTotal(OSN.pur, OSN.growthTotal),
-};
-
-var OSNSegmentArrays = {
-    yearsMobileEur: calcSegment(OSNArrays.yearsTotalEur, OSN.growthMobile, null),
-    yearsMobilePur: calcSegment(OSNArrays.yearsTotalPur, OSN.growthMobile, null),
-    yearsCCEur: calcSegment(OSNArrays.yearsTotalEur, null, OSN.growthCC),
-    yearsCCPur: calcSegment(OSNArrays.yearsTotalPur, null, OSN.growthCC),
-    yearsCCMobEur: calcSegment(OSNArrays.yearsTotalEur, OSN.growthMobile, OSN.growthCC),
-    yearsCCMobPur: calcSegment(OSNArrays.yearsTotalPur, OSN.growthMobile, OSN.growthCC),
-};
-
-var finConf1 = {
-    type: chartConf.type.line,
+var finConf2 = {
+    type: chartConf.type.horizontalBar,
+    labels: 'doorlooptijd',
     data: {
-        labels: YearLabels,
-        datasets: [{
-            label: '0,25%',
-            data: calcRev(OSNSegmentArrays.yearsCCMobEur, OSN.revPercs[0]),
-            backgroundColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.none+')',
-            ],
-            borderColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.none +')',
-            ],
-            borderWidth: 1
-        },
-        {
-            label: '0,5%',
-            data: calcRev(OSNSegmentArrays.yearsCCMobEur, OSN.revPercs[1]),
-            backgroundColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.medium +')',
-            ],
-            borderColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.none +')',
-            ],
-            borderWidth: 1
-        },
-        {
-            label: '0,75%',
-            data: calcRev(OSNSegmentArrays.yearsCCMobEur, OSN.revPercs[2]),
-            backgroundColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.light+')',
-            ],
-            borderColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.none +')',
-            ],
-            borderWidth: 1
-        },{
-            label: '0,25% all cc',
-            data: calcRev(OSNSegmentArrays.yearsCCEur, OSN.revPercs[0]),
-            backgroundColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.transparent+')',
-            ],
-            borderColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.none +')',
-            ],
-            borderWidth: 1
-        },
-        {
-            label: '0,5% all cc',
-            data: calcRev(OSNSegmentArrays.yearsCCEur, OSN.revPercs[1]),
-            backgroundColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.transparent +')',
-            ],
-            borderColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.none +')',
-            ],
-            borderWidth: 1
-        },
-        {
-            label: '0,75% all cc',
-            data: calcRev(OSNSegmentArrays.yearsCCEur, OSN.revPercs[2]),
-            backgroundColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.transparent+')',
-            ],
-            borderColor: [
-                'rgba('+ chartConf.colors.blue +','+ chartConf.opacity.none +')',
-            ],
-            borderWidth: 1
-        },
-    ]
+        labels: ['PRIO1: Issue 1', 'PRIO2: DGS3.0', 'PRIO3: Zorgkrediet'],
+        datasets: [
+            {
+                data: [2018.75, 2018.75, 2019.25],
+                backgroundColor: [
+                    'rgba(' +
+                        chartConf.colors.orange +
+                        ',' +
+                        chartConf.opacity.none +
+                        ')',
+                    'rgba(' +
+                        chartConf.colors.orange +
+                        ',' +
+                        chartConf.opacity.none +
+                        ')',
+                    'rgba(' +
+                        chartConf.colors.red +
+                        ',' +
+                        chartConf.opacity.none +
+                        ')'
+                ],
+                borderColor: [
+                    'rgba(' +
+                        chartConf.colors.blue +
+                        ',' +
+                        chartConf.opacity.transparent +
+                        ')',
+                    'rgba(' +
+                        chartConf.colors.blue +
+                        ',' +
+                        chartConf.opacity.transparent +
+                        ')',
+                    'rgba(' +
+                        chartConf.colors.blue +
+                        ',' +
+                        chartConf.opacity.transparent +
+                        ')'
+                ],
+                borderWidth: 1
+            }
+        ]
     },
     options: {
+        legend: {
+            position: 'right',
+            labels: {
+                fontColor: 'rgba(255,255,255,1)'
+            }
+        },
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true,
-                    callback: function(value, index, values) {
-                        if(value > 0) {
-                            return '€' + value + 'M';
-                        } else {
-                            return 0;
-                        }
-                    },
-                    fontColor: 'rgba(255,255,255,0.5)'
+            yAxes: [
+                {
+                    ticks: {
+                        fontColor: 'rgba(255,255,255,1)'
+                    }
                 }
-            }],
-            xAxes: [{
-                ticks: {
-                    fontColor: 'rgba(255,255,255,0.5)'
+            ],
+            xAxes: [
+                {
+                    ticks: {
+                        fontColor: 'rgba(255,255,255,1)',
+                        callback: function(value, index, values) {
+                            var year = value.toString().split('.');
+                            console.log(year);
+                            var q = (value % 1).toFixed(2);
+                            return year[0] + ' Q' + q / 0.25;
+                        },
+                        stepSize: 0.25,
+                        min: 2018,
+                        max: 2019.5
+                    }
                 }
-            }]
+            ]
         },
         responsive: true
     }
-}
+};
 
-var ctx1 = document.getElementById("Finance1");
+var finConf3 = {
+    type: chartConf.type.bar,
+    data: {
+        labels: [' tot 1 maart 2018', 'na 1 maart 2018'],
+        datasets: [
+            {
+                label: 'PM,BI',
+                backgroundColor:
+                    'rgba(' +
+                    chartConf.colors.orange +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                borderColor:
+                    'rgba(' +
+                    chartConf.colors.orange +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                stack: 'Stack 0',
+                data: [10, 5]
+            },
+            {
+                label: 'arch',
+                backgroundColor:
+                    'rgba(' +
+                    chartConf.colors.yellow +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                borderColor:
+                    'rgba(' +
+                    chartConf.colors.yellow +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                stack: 'Stack 0',
+                data: [0, 0]
+            },
+            {
+                label: 'BPM',
+                backgroundColor:
+                    'rgba(' +
+                    chartConf.colors.green +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                borderColor:
+                    'rgba(' +
+                    chartConf.colors.green +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                stack: 'Stack 0',
+                data: [50, 50]
+            },
+            {
+                label: 'devOps',
+                backgroundColor:
+                    'rgba(' +
+                    chartConf.colors.blue +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                borderColor:
+                    'rgba(' +
+                    chartConf.colors.blue +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                stack: 'Stack 0',
+                data: [80, 80]
+            },
+            {
+                label: 'Market & Comm',
+                backgroundColor:
+                    'rgba(' +
+                    chartConf.colors.pink +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                borderColor:
+                    'rgba(' +
+                    chartConf.colors.pink +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                stack: 'Stack 0',
+                data: [1, 2, 3, 4, 5]
+            },
+            {
+                label: 'Business Analyse',
+                backgroundColor:
+                    'rgba(' +
+                    chartConf.colors.red +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                borderColor:
+                    'rgba(' +
+                    chartConf.colors.red +
+                    ',' +
+                    chartConf.opacity.none +
+                    ')',
+                stack: 'Stack 0',
+                data: [80, 30]
+            }
+        ]
+    },
+    options: {
+        legend: {
+            labels: {
+                fontColor: 'rgba(255,255,255,1)'
+            }
+        },
+        scales: {
+            yAxes: [
+                {
+                    ticks: {
+                        fontColor: 'rgba(255,255,255,1)',
+                        min: 0,
+                        max: 300
+                    }
+                }
+            ],
+            xAxes: [
+                {
+                    ticks: {
+                        fontColor: 'rgba(255,255,255,1)'
+                    }
+                }
+            ]
+        },
+        responsive: true
+    }
+};
 
-var Finance_1 = new Chart(ctx1, finConf1);
+//var ctx1 = document.getElementById('Finance1');
+var ctx2 = document.getElementById('Finance2');
 
+//var Finance_1 = new Chart(ctx1, finConf2);
+var Finance_2 = new Chart(ctx2, finConf3);

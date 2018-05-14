@@ -14,7 +14,8 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/reveal/index.css">
 	<link rel="stylesheet" href="css/reveal/default.css">
-	<link href="https://fonts.googleapis.com/css?family=Unica+One|Julius+Sans+One|Pacifico|Permanent+Marker|Leckerli+One|Libre+Barcode+39+Extended+Text" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Unica+One|Julius+Sans+One|Pacifico|Permanent+Marker|Leckerli+One|Libre+Barcode+39+Extended+Text"
+	 rel="stylesheet">
 	<link rel="stylesheet" href="css/font-awesome/font-awesome.css">
 	<link rel="stylesheet" href="css/devices/devices.css" type="text/css">
 	<link rel="stylesheet" href="css/main.css">
@@ -31,11 +32,11 @@
 	<!-- Add your site or application content here -->
 	<div id="particles-js" class="reveal">
 		<div class="slides fs">
-		
+
 			<section class="no-bg">
 				<div class="dcug-logo"></div>
-				<h2>DCUG @ Google</h2>
-				<a class="mint" href="https://www.meetup.com/nl-NL/DCUGNL/events/245923039/">1 maart 2018 - Meetup dutch chatbot user group</a>
+				<h2>DCUG @ KLM</h2>
+				<a href="https://www.meetup.com/nl-NL/DCUGNL/events/245923039/">17 mei 2018 - Meetup Dutch Chatbot User Group</a>
 			</section>
 
 			<!-- ************* -->
@@ -46,13 +47,19 @@
 					<!-- text -->
 					<div class="phone-text">
 						<h2>Agenda</h2>
-						<h3 class="text-shade mint">Libs:
+						<h3 class="text-shade">Libs:
 						</h3>
 						<hr>
 						<ul>
-							<li><a href="https://vincentgarreau.com/particles.js/">Particles.js</a></li>
-							<li><a href="http://www.chartjs.org/">charts.js</a></li>
-							<li><a href="https://picturepan2.github.io/devices.css/">devices.css</a></li>
+							<li>
+								<a href="https://vincentgarreau.com/particles.js/">Particles.js</a>
+							</li>
+							<li>
+								<a href="http://www.chartjs.org/">charts.js</a>
+							</li>
+							<li>
+								<a href="https://picturepan2.github.io/devices.css/">devices.css</a>
+							</li>
 						</ul>
 					</div>
 
@@ -81,9 +88,12 @@
 
 			<section>
 				<section class="chart-slide">
-					<div class="chart-container">
+					<!-- <div class="chart-container">
 						<canvas id="Finance1"></canvas>
-					</div>
+					</div> -->
+					<!-- <div class="overlaychart" style="position: absolute; top: 398px; left: 69px; width: 90%"> -->
+					<canvas id="Finance2"></canvas>
+					<!-- </div> -->
 				</section>
 			</section>
 
@@ -96,111 +106,111 @@
 		// add particles
 		var particleParams = {
 			"particles": {
-			"number": {
-				"value": 70,
-				"density": {
-				"enable": true,
-				"value_area": 800
-				}
-			},
-			"color": {
-				"value": "#ffffff"
-			},
-			"shape": {
-				"type": "circle",
-				"stroke": {
-				"width": 0,
-				"color": "#ffffff"
+				"number": {
+					"value": 70,
+					"density": {
+						"enable": true,
+						"value_area": 800
+					}
 				},
-				"polygon": {
-				"nb_sides": 5
+				"color": {
+					"value": "#ffffff"
 				},
-				"image": {
-				"src": "img/github.svg",
-				"width": 100,
-				"height": 100
+				"shape": {
+					"type": "circle",
+					"stroke": {
+						"width": 0,
+						"color": "#ffffff"
+					},
+					"polygon": {
+						"nb_sides": 5
+					},
+					"image": {
+						"src": "img/github.svg",
+						"width": 100,
+						"height": 100
+					}
+				},
+				"opacity": {
+					"value": 1,
+					"random": false,
+					"anim": {
+						"enable": false,
+						"speed": 1,
+						"opacity_min": 0.1,
+						"sync": false
+					}
+				},
+				"size": {
+					"value": 5,
+					"random": true,
+					"anim": {
+						"enable": false,
+						"speed": 80,
+						"size_min": 0.1,
+						"sync": false
+					}
+				},
+				"line_linked": {
+					"enable": true,
+					"distance": 150,
+					"color": "#ffffff",
+					"opacity": 1,
+					"width": .5
+				},
+				"move": {
+					"enable": true,
+					"speed": .5,
+					"direction": "none",
+					"random": false,
+					"straight": false,
+					"out_mode": "out",
+					"bounce": false,
+					"attract": {
+						"enable": false,
+						"rotateX": 600,
+						"rotateY": 1200
+					}
 				}
-			},
-			"opacity": {
-				"value": 1,
-				"random": false,
-				"anim": {
-				"enable": false,
-				"speed": 1,
-				"opacity_min": 0.1,
-				"sync": false
-				}
-			},
-			"size": {
-				"value": 5,
-				"random": true,
-				"anim": {
-				"enable": false,
-				"speed": 80,
-				"size_min": 0.1,
-				"sync": false
-				}
-			},
-			"line_linked": {
-				"enable": true,
-				"distance": 150,
-				"color": "#ffffff",
-				"opacity": 1,
-				"width": .5
-			},
-			"move": {
-				"enable": true,
-				"speed": .5,
-				"direction": "none",
-				"random": false,
-				"straight": false,
-				"out_mode": "out",
-				"bounce": false,
-				"attract": {
-				"enable": false,
-				"rotateX": 600,
-				"rotateY": 1200
-				}
-			}
 			},
 			"interactivity": {
-			"detect_on": "canvas",
-			"events": {
-				"onhover": {
-				"enable": false,
-				"mode": "repulse"
+				"detect_on": "canvas",
+				"events": {
+					"onhover": {
+						"enable": false,
+						"mode": "repulse"
+					},
+					"onclick": {
+						"enable": true,
+						"mode": "push"
+					},
+					"resize": true
 				},
-				"onclick": {
-				"enable": true,
-				"mode": "push"
-				},
-				"resize": true
-			},
-			"modes": {
-				"grab": {
-				"distance": 800,
-				"line_linked": {
-					"opacity": 1
+				"modes": {
+					"grab": {
+						"distance": 800,
+						"line_linked": {
+							"opacity": 1
+						}
+					},
+					"bubble": {
+						"distance": 800,
+						"size": 80,
+						"duration": 2,
+						"opacity": 0.8,
+						"speed": 3
+					},
+					"repulse": {
+						"distance": 400,
+						"duration": 0.4
+					},
+					"push": {
+						"particles_nb": 4
+					},
+					"remove": {
+						"particles_nb": 2
+					}
 				}
-				},
-				"bubble": {
-				"distance": 800,
-				"size": 80,
-				"duration": 2,
-				"opacity": 0.8,
-				"speed": 3
-				},
-				"repulse": {
-				"distance": 400,
-				"duration": 0.4
-				},
-				"push": {
-				"particles_nb": 4
-				},
-				"remove": {
-				"particles_nb": 2
-				}
-			}
 			},
 			"retina_detect": true
 		};
