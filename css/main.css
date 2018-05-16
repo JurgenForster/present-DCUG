@@ -21,7 +21,7 @@
 }
 
 html {
-    color: #222;
+    color: #00a1de;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -290,7 +290,14 @@ body {
     background-color: #DDDDDD#00a1de;  */
 }
 
+.reveal .state-background {
+    background: transparent;
+}
+
 .reveal .dcug-logo {
+    position: absolute;
+    left: calc(50% - 200px);
+    top: calc(30% - 200px);
     width: 400px;
     height: 400px;
     border-radius: 50%;
@@ -298,6 +305,20 @@ body {
     margin: 20px auto;
     background: url('../resources/img/chatbot_evolution.svg') 0 0 no-repeat;
     overflow: hidden;
+    z-index: 15000;
+}
+
+.reveal .dcug-title {
+    position: absolute;
+    left: calc(50% - 240px);
+    top: calc(60%);
+    z-index: 14000;
+}
+.reveal .dcug-subtitle {
+    position: absolute;
+    left: calc(50% - 350px);
+    top: calc(70%);
+    z-index: 13000;
 }
 
 .reveal h1,
@@ -651,3 +672,166 @@ ul.images {
     background-color: #999999;
     position: relative;
 }
+
+
+
+/**********************************************
+* clouds
+/**********************************************/
+
+@keyframes clouds {
+    0% {
+        left: -20%;
+    }
+    100% {
+        left: 120%;
+    }
+}
+
+.cloud-box {
+    position: relative;
+    height: 800px;;
+}
+
+.cloud {
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: -30%;
+    height: 40px;
+    width: 160px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.cloud::before {
+    content: "";
+    top: -50px;
+    left: 20px;
+    display: block;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.cloud::after {
+    content: "";
+    top: -30px;
+    left: 80px;
+    display: block;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.cloud:first-child {
+    animation: clouds 400s ease infinite;
+    z-index: 16001;
+}
+
+.cloud:nth-child(2) {
+    animation: clouds 300s ease infinite reverse;
+    animation-delay: 20s;
+    top: 40%;
+    zoom: 0.6;
+    z-index: 10001;
+}
+
+.cloud:nth-child(3) {
+    animation: clouds 500s ease infinite reverse;
+    animation-delay: 120s;
+    top: 102%;
+    zoom: 1.2;
+    z-index: 16000;
+}
+
+.cloud:nth-child(4) {
+    animation: clouds 300s ease infinite;
+    animation-delay: 220s;
+    top: 60%;
+    zoom: 0.8;
+    z-index: 10000;
+}
+
+/**********************************************
+* planes
+/**********************************************/
+
+.reveal .plane {
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 800px;
+    top: 60%;
+    left: 30%;
+    background: linear-gradient(to top, transparent, white);
+    z-index: 1500;
+   
+}
+
+.reveal .plane:first-child {
+    transform: rotate(20deg);
+    animation: plane1-be-flying 500s infinite;
+}
+
+.reveal .plane:nth-child(2) {
+    transform: rotate(-50deg);
+    animation: plane2-be-flying 500s 50s infinite;
+}
+
+.reveal .plane::before {
+    content: "";
+    display: block;
+    position: absolute; 
+    width: 0;
+    height: 0; 
+    border: 5px solid transparent;
+    border-bottom: 20px solid white;
+    top: -25px;
+    left: calc(50% - 5px);
+}
+
+.reveal .plane::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 801px solid transparent;
+    border-left: 31px solid #00a1de;
+    border-right: 31px solid #00a1de;
+    top: -1px;
+    left: -1px;
+}
+
+@keyframes plane1-be-flying {
+    0% {
+        top: 120%;
+        left: 5%;
+    }
+
+    100% {
+        top: -120%;
+        left: 30%;
+    }
+}
+
+@keyframes plane2-be-flying {
+    0% {
+        top: 100%;
+        left: 120%;
+    }
+
+    100% {
+        top: 10%;
+        left: -100%;
+    }
+}
+
+
+
